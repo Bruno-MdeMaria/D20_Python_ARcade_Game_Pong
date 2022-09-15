@@ -1,4 +1,5 @@
-from turtle import Screen, Turtle
+from turtle import Screen, Turtle, goto
+from padle import Padle
 
 
 #CONSTRUÇÃO DA TELA:
@@ -8,28 +9,14 @@ screen.bgcolor("black")
 screen.title("Pong - Arcade Game")
 screen.tracer(0)    #o zero elimina a animação na tela. por isso é necessáro chamar o metodo .update dentro de um laço a diante.
 
+r_padle = Padle(goto(350,0))
+l_padle = Padle(goto(-350,0))
 
-#CONSTRUÇÃO DA PÁ:
-padle = Turtle()                   #produzir a pá
-padle.shape("square")              #alterar o formato da tartaruga para um quadrado de 20px x 20px
-padle.penup()             
-padle.shapesize(stretch_wid= 5 , stretch_len= 1) #aumentar o tamanho da na altura 5 x os 20px padrao e a largura manter 1x os 20px
-padle.color("white")
-padle.goto(350,0)
-
-#FUNÇÕES DA PÁ:
-def go_up():
-    nova_posi_y = padle.ycor() +20    # a nova posioção y será a posição atual y (.ycor) + 20px.
-    padle.goto(padle.xcor(),nova_posi_y) #a nova posição (.goto) quando a função for chamada será x igual a nada pois não movimenta nesse eixo e a posicao ycor será 20px para cima.
-
-def go_down():
-    nova_posi_y = padle.ycor() -20
-    padle.goto(padle.xcor(), nova_posi_y) 
 
 #OUVIR O TECLADO PARA PODER MOVER A PÁ:
 screen.listen()
-screen.onkey(go_up, "Up")
-screen.onkey(go_down, "Down")
+screen.onkey(r_padle.go_up, "Up")
+screen.onkey(r_padle.go_down, "Down")
 
 game_on = True
 while game_on == True:
