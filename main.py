@@ -6,6 +6,7 @@ screen = Screen()
 screen.setup(width= 800, height= 600)
 screen.bgcolor("black")
 screen.title("Pong - Arcade Game")
+screen.tracer(0)    #o zero elimina a animação na tela. por isso é necessáro chamar o metodo .update dentro de um laço a diante.
 
 
 #CONSTRUÇÃO DA PÁ:
