@@ -19,11 +19,16 @@ padle.goto(350,0)
 #FUNÇÕES DA PÁ:
 def go_up():
     nova_posi_y = padle.ycor() +20    # a nova posioção y será a posição atual y (.ycor) + 20px.
-    padle.goto(padle.xcor(),padle.ycor(nova_posi_y)) #a nova posição (.goto) quando a função for chamada será x igual a nada pois não movimenta nesse eixo e a posicao ycor será 20px para cima.
+    padle.goto(padle.xcor(),nova_posi_y) #a nova posição (.goto) quando a função for chamada será x igual a nada pois não movimenta nesse eixo e a posicao ycor será 20px para cima.
+
+def go_down():
+    nova_posi_y = padle.ycor() -20
+    padle.goto(padle.xcor(), nova_posi_y) 
 
 #OUVIR O TECLADO PARA PODER MOVER A PÁ:
 screen.listen()
-screen.onkey(go_up, "up")
+screen.onkey(go_up, "Up")
+screen.onkey(go_down, "Down")
 
 
 
