@@ -25,10 +25,10 @@ screen.onkeypress(l_padle.go_down, "s")
 game_on = True
 while game_on == True:
     screen.update()
-    ball.move()
+    ball.mover()
     
 #DETECTAR COLISÃO COM A PAREDE:
-    if ball.ycor() > 300 or ball.ycor < -300:
-        pass
+    if ball.ycor() > 290 or ball.ycor() < -290:
+        ball.bater()
 
 screen.exitonclick()
