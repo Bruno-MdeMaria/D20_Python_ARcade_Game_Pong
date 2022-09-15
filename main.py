@@ -31,7 +31,9 @@ screen.listen()
 screen.onkey(go_up, "Up")
 screen.onkey(go_down, "Down")
 
-
+game_on = True
+while game_on == True:
+    screen.update()
 
 
 screen.exitonclick()
