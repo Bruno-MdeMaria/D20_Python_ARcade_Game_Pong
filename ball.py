@@ -13,3 +13,6 @@ class Ball(Turtle):
         new_x = self.xcor() +0.5
         self.goto(new_x, new_y)
 
+    def bater(self):
+        new_y = self.ycor() -0.5
+

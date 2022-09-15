@@ -1,4 +1,4 @@
-from turtle import Screen, Turtle, goto
+from turtle import Screen, Turtle, goto, position
 from padle import Padle
 from ball import Ball
 
@@ -27,6 +27,8 @@ while game_on == True:
     screen.update()
     ball.move()
     
-
+#DETECTAR COLISÃO COM A PAREDE:
+    if ball.ycor() > 300 or ball.ycor < -300:
+        pass
 
 screen.exitonclick()
