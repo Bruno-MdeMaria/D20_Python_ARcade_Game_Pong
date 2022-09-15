@@ -15,6 +15,11 @@ class Ball(Turtle):
         new_x = self.xcor() + self.x_move
         self.goto(new_x, new_y)
 
-    def bater(self):
+
+    def bater_y(self):
         self.y_move *= -1    #para mudar a direção quando bate da parede. ele está subindo em +0.5 com x -1 fica -0.5
+
+    
+    def bater_x(self):
+        self.x_move *= -1  
 
