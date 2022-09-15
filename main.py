@@ -15,6 +15,9 @@ padle.shapesize(stretch_wid= 5 , stretch_len= 1) #aumentar o tamanho da na altur
 padle.color("white")
 padle.goto(350,0)
 
+screen.listen()
+
+
 
 
 screen.exitonclick()
