@@ -4,14 +4,14 @@ from turtle import Turtle
 
 #CONSTRUÇÃO DA PÁ:
 class Padle(Turtle):
-    def __init__(self):
+    def __init__(self, position):
         super().__init__()
-        self = Turtle()                   #produzir a pá
         self.shape("square")              #alterar o formato da tartaruga para um quadrado de 20px x 20px
         self.penup()             
         self.shapesize(stretch_wid= 5 , stretch_len= 1) #aumentar o tamanho da na altura 5 x os 20px padrao e a largura manter 1x os 20px
         self.color("white")
-        self.goto(350,0)
+        self.goto(position)
+       
 
 #FUNÇÕES DA PÁ:
     def go_up(self):
