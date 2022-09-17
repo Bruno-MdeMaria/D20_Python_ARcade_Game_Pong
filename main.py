@@ -40,8 +40,10 @@ while game_on == True:
 #DETECTAR QUANDO AS PADLE NÃO CONSEGUEM BATER NA BOLA:
     if ball.xcor() > 410:
         ball.reset_position()
+        scoreboard.l_point()
     
     if ball.xcor() < -410:
         ball.reset_position()
+        scoreboard.r_point()
 
 screen.exitonclick()
