@@ -31,11 +31,11 @@ while game_on == True:
     if ball.ycor() > 290 or ball.ycor() < -290:
         ball.bater_y()
 
-#DETECTAR COLISÃO COM A PADLE DIREITA:
-    if ball.distance(r_padle) < 50 and ball.xcor() > 340:  #se a distancia da bola e a raquete direita for menor que 50px e a distancia da bola na cordenada x for menor que 340 então ela atingiu a raquete.
+#DETECTAR COLISÃO COM AS DUAS PADLE:
+    if ball.distance(r_padle) < 50 and ball.xcor() > 340 or ball.distance(l_padle) < 50 and ball.xcor() <-340:  #se a distancia da bola e a raquete direita for menor que 50px e a distancia da bola na cordenada x for menor que 340 então ela atingiu a raquete. O mesmo (or) com a raquete esquerda.
         ball.bater_x()
 
-#DETECTAR QUANDO A PADLE DIREIRA NÃO CONSEGUE BATER NA BOLA:
+#DETECTAR QUANDO AS PADLE NÃO CONSEGUEM BATER NA BOLA:
     if ball.xcor() > 380:
         ball.reset_position()
     
