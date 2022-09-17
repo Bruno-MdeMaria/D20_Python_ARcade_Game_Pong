@@ -1,6 +1,7 @@
 from turtle import Screen, Turtle, goto, position
 from padle import Padle
 from ball import Ball
+from scoreboard import Scoreboard
 
 
 #CONSTRUÇÃO DA TELA:
@@ -14,6 +15,7 @@ screen.tracer(0)    #o zero elimina a animação na tela. por isso é necessáro
 r_padle = Padle((350,0))
 l_padle = Padle((-350,0))
 ball = Ball()
+scoreboard = Scoreboard()
 
 #OUVIR O TECLADO PARA PODER MOVER A PÁ:
 screen.listen()
