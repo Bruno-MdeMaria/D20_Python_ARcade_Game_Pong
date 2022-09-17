@@ -2,6 +2,7 @@ from turtle import Screen, Turtle, goto, position
 from padle import Padle
 from ball import Ball
 from scoreboard import Scoreboard
+import time
 
 
 #CONSTRUÇÃO DA TELA:
@@ -26,6 +27,7 @@ screen.onkeypress(l_padle.go_down, "s")
 
 game_on = True
 while game_on == True:
+    time.sleep(0.1)
     screen.update()
     ball.mover()
     
@@ -34,13 +36,14 @@ while game_on == True:
         ball.bater_y()
 
 #DETECTAR COLISÃO COM AS DUAS PADLE:
-    if ball.distance(r_padle) < 50 and ball.xcor() > 340 or ball.distance(l_padle) < 50 and ball.xcor() <-340:  #se a distancia da bola e a raquete direita for menor que 50px e a distancia da bola na cordenada x for menor que 340 então ela atingiu a raquete. O mesmo (or) com a raquete esquerda.
+    if ball.distance(r_padle) < 50 and ball.xcor() > 320 or ball.distance(l_padle) < 50 and ball.xcor() <-320:  #se a distancia da bola e a raquete direita for menor que 50px e a distancia da bola na cordenada x for menor que 340 então ela atingiu a raquete. O mesmo (or) com a raquete esquerda.
         ball.bater_x()
 
 #DETECTAR QUANDO AS PADLE NÃO CONSEGUEM BATER NA BOLA:
     if ball.xcor() > 410:
         ball.reset_position()
         scoreboard.l_point()
+
     
     if ball.xcor() < -410:
         ball.reset_position()
