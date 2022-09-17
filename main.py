@@ -35,7 +35,11 @@ while game_on == True:
     if ball.distance(r_padle) < 50 and ball.xcor() > 340:  #se a distancia da bola e a raquete direita for menor que 50px e a distancia da bola na cordenada x for menor que 340 então ela atingiu a raquete.
         ball.bater_x()
 
-
-#DETECTAR COLISAO COM DEMAIS PADLE
+#DETECTAR QUANDO A PADLE DIREIRA NÃO CONSEGUE BATER NA BOLA:
+    if ball.xcor() > 380:
+        ball.reset_position()
+    
+    if ball.xcor() < -380:
+        ball.reset_position()
 
 screen.exitonclick()
